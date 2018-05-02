@@ -12,7 +12,7 @@
   [b]PUID:[/b] Volume Owner UID[br]
   [b]TZ:[/b] Time Zone[br]
   [br][b]Volume Mounts[/b][br]
-  [b]/mnt/home:[/b] Home Volume[br]
+  [b]/mnt/config:[/b] Home Volume[br]
 	</Description>
 
 	<BaseImage>alpine</BaseImage>
