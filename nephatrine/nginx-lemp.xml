@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/nginx-lemp.xml</TemplateURL>
+
+	<Name>nginx-lemp</Name>
+	<Project>https://lemp.io/</Project>
+	<Overview>LEMP is a variation of the ubiquitous LAMP stack used for developing and deploying web applications.</Overview>
+	<Description>LEMP is a variation of the ubiquitous LAMP stack used for developing and deploying web applications. [br]
+  [br][b]Variables[/b][br]
+  [b]DNSADDR:[/b] DNS Resolver IPs[br]
+  [b]PGID:[/b] NGINX GID[br]
+  [b]PUID:[/b] NGINX UID[br]
+  [b]SSLEMAIL:[/b] LetsEncrypt Email Address[br]
+  [b]SSLDOMAINS:[/b] LetsEncrypt (Sub)domains[br]
+  [b]TZ:[/b] Time Zone[br]
+  [br][b]Network Ports[/b][br]
+  [b]TCP 80:[/b] HTTP Port[br]
+  [b]TCP 443:[/b] HTTPS Port[br]
+  [br][b]Volume Mounts[/b][br]
+  [b]/mnt/config:[/b] Config/Data/Log Volume[br]
+	</Description>
+
+	<BaseImage>nephatrine/nginx-ssl</BaseImage>
+	<Beta>False</Beta>
+	<Category>Network:Web</Category>
+	<Registry>https://hub.docker.com/r/nephatrine/nginx-lemp/</Registry>
+	<Repository>nephatrine/nginx-lemp</Repository>
+	<Support>https://github.com/nephatrine/docker-nginx-lemp/issues</Support>
+
+	<BindTime>true</BindTime>
+	<Privileged>false</Privileged>
+
+	<Environment>
+		<Variable>
+			<Name>DNSADDR</Name>
+			<Value>8.8.8.8 8.8.4.4</Value>
+		</Variable>
+		<Variable>
+			<Name>PUID</Name>
+			<Value>1000</Value>
+		</Variable>
+		<Variable>
+			<Name>PGID</Name>
+			<Value>100</Value>
+		</Variable>
+		<Variable>
+			<Name>SSLEMAIL</Name>
+			<Value></Value>
+		</Variable>
+		<Variable>
+			<Name>SSLDOMAINS</Name>
+			<Value></Value>
+		</Variable>
+		<Variable>
+			<Name>TZ</Name>
+			<Value>America/New_York</Value>
+		</Variable>
+	</Environment>
+
+	<Networking>
+		<Mode>bridge</Mode>
+		<Publish>
+			<Port>
+				<HostPort>9019</HostPort>
+				<ContainerPort>80</ContainerPort>
+				<Protocol>tcp</Protocol>
+			</Port>
+			<Port>
+				<HostPort>9029</HostPort>
+				<ContainerPort>443</ContainerPort>
+				<Protocol>tcp</Protocol>
+			</Port>
+		</Publish>
+	</Networking>
+
+	<Data>
+		<Volume>
+			<HostDir>/mnt/user/appdata/docker-nginx-lemp</HostDir>
+			<ContainerDir>/mnt/config</ContainerDir>
+			<Mode>rw</Mode>
+		</Volume>
+	</Data>
+	
+	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/nginx-lemp.png</Icon>
+	<WebUI>http://[IP]:[PORT:80]/</WebUI>
+</Container>
