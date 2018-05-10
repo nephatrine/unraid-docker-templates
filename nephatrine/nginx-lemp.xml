@@ -5,7 +5,7 @@
 	<Name>nginx-lemp</Name>
 	<Project>https://lemp.io/</Project>
 	<Overview>LEMP is a variation of the ubiquitous LAMP stack used for developing and deploying web applications.</Overview>
-	<Description>LEMP is a variation of the ubiquitous LAMP stack used for developing and deploying web applications. [br]
+	<Description>LEMP is a variation of the ubiquitous LAMP stack used for developing and deploying web applications.[br]
   [br][b]Variables[/b][br]
   [b]DNSADDR:[/b] DNS Resolver IPs[br]
   [b]PGID:[/b] NGINX GID[br]
