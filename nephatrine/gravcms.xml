@@ -61,12 +61,12 @@
 		<Mode>bridge</Mode>
 		<Publish>
 			<Port>
-				<HostPort>9019</HostPort>
+				<HostPort>9011</HostPort>
 				<ContainerPort>80</ContainerPort>
 				<Protocol>tcp</Protocol>
 			</Port>
 			<Port>
-				<HostPort>9029</HostPort>
+				<HostPort>9021</HostPort>
 				<ContainerPort>443</ContainerPort>
 				<Protocol>tcp</Protocol>
 			</Port>
