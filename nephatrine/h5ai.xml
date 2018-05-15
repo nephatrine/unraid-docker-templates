@@ -22,7 +22,7 @@
   [b]/mnt/media:[/b] Data Volume[br]
 	</Description>
 
-	<BaseImage>nephatrine/nginx-lemp</BaseImage>
+	<BaseImage>nephatrine/base-php7</BaseImage>
 	<Beta>False</Beta>
 	<Category>MediaServer:Other Network:Web</Category>
 	<Registry>https://hub.docker.com/r/nephatrine/h5ai/</Registry>
