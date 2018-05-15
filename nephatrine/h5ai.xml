@@ -7,6 +7,7 @@
 	<Overview>h5ai is a modern file indexer for HTTP web servers with focus on your files. </Overview>
 	<Description>h5ai is a modern file indexer for HTTP web servers with focus on your files. [br]
   [br][b]Variables[/b][br]
+  [b]ADMINIP:[/b] Administrative IP[br]
   [b]DNSADDR:[/b] DNS Resolver IPs[br]
   [b]PGID:[/b] NGINX GID[br]
   [b]PUID:[/b] NGINX UID[br]
@@ -32,6 +33,10 @@
 	<Privileged>false</Privileged>
 
 	<Environment>
+		<Variable>
+			<Name>ADMINIP</Name>
+			<Value>127.0.0.1</Value>
+		</Variable>
 		<Variable>
 			<Name>DNSADDR</Name>
 			<Value>8.8.8.8 8.8.4.4</Value>

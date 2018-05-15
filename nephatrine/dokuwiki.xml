@@ -7,6 +7,7 @@
 	<Overview>DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database.</Overview>
 	<Description>DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database.[br]
   [br][b]Variables[/b][br]
+  [b]ADMINIP:[/b] Administrative IP[br]
   [b]DNSADDR:[/b] DNS Resolver IPs[br]
   [b]PGID:[/b] NGINX GID[br]
   [b]PUID:[/b] NGINX UID[br]
@@ -31,6 +32,10 @@
 	<Privileged>false</Privileged>
 
 	<Environment>
+		<Variable>
+			<Name>ADMINIP</Name>
+			<Value>127.0.0.1</Value>
+		</Variable>
 		<Variable>
 			<Name>DNSADDR</Name>
 			<Value>8.8.8.8 8.8.4.4</Value>
