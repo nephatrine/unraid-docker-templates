@@ -82,5 +82,5 @@
 	</Data>
 	
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/unifi.png</Icon>
-	<WebUI>http://[IP]:[PORT:8443]/</WebUI>
+	<WebUI>https://[IP]:[PORT:8443]/</WebUI>
 </Container>
