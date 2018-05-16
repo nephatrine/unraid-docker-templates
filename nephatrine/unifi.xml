@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/unifi.xml</TemplateURL>
+
+	<Name>unifi</Name>
+	<Project>https://unifi-sdn.ubnt.com/</Project>
+	<Overview>UniFi is quickly expanding to a full Software Defined Networking (SDN) solution.</Overview>
+	<Description>UniFi is quickly expanding to a full Software Defined Networking (SDN) solution.[br]
+  [br][b]Variables[/b][br]
+  [b]PGID:[/b] NGINX GID[br]
+  [b]PUID:[/b] NGINX UID[br]
+  [b]TZ:[/b] Time Zone[br]
+  [br][b]Network Ports[/b][br]
+  [b]TCP 8080:[/b] UniFi Inform[br]
+  [b]TCP 8443:[/b] Web GUI Access[br]
+  [b]TCP 8880:[/b] Guest Portal (HTTP)[br]
+  [b]TCP 8843:[/b] Guest Portal (HTTPS)[br]
+  [b]TCP 6789:[/b] Mobile Speed Test[br]
+  [b]UDP 3478:[/b] STUN Support[br]
+  [b]UDP 10001:[/b] AP Discovery[br]
+  [br][b]Volume Mounts[/b][br]
+  [b]/mnt/config:[/b] Config/Data/Log Volume[br]
+	</Description>
+
+	<BaseImage>nephatrine/base-alpine</BaseImage>
+	<Beta>False</Beta>
+	<Category>Network:Management</Category>
+	<Registry>https://hub.docker.com/r/nephatrine/unifi/</Registry>
+	<Repository>nephatrine/unifi</Repository>
+	<Support>https://github.com/nephatrine/docker-unifi/issues</Support>
+
+	<BindTime>true</BindTime>
+	<Privileged>false</Privileged>
+
+	<Environment>
+		<Variable>
+			<Name>PUID</Name>
+			<Value>1000</Value>
+		</Variable>
+		<Variable>
+			<Name>PGID</Name>
+			<Value>100</Value>
+		</Variable>
+		<Variable>
+			<Name>TZ</Name>
+			<Value>America/New_York</Value>
+		</Variable>
+	</Environment>
+
+	<Networking>
+		<Mode>bridge</Mode>
+		<Publish>
+			<Port>
+				<HostPort>3478</HostPort>
+				<ContainerPort>3478</ContainerPort>
+				<Protocol>udp</Protocol>
+			</Port>
+			<Port>
+				<HostPort>8080</HostPort>
+				<ContainerPort>8080</ContainerPort>
+				<Protocol>tcp</Protocol>
+			</Port>
+			<Port>
+				<HostPort>8443</HostPort>
+				<ContainerPort>8443</ContainerPort>
+				<Protocol>tcp</Protocol>
+			</Port>
+			<Port>
+				<HostPort>10001</HostPort>
+				<ContainerPort>10001</ContainerPort>
+				<Protocol>udp</Protocol>
+			</Port>
+		</Publish>
+	</Networking>
+
+	<Data>
+		<Volume>
+			<HostDir>/mnt/user/appdata/docker-unifi</HostDir>
+			<ContainerDir>/mnt/config</ContainerDir>
+			<Mode>rw</Mode>
+		</Volume>
+	</Data>
+	
+	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/unifi.png</Icon>
+	<WebUI>http://[IP]:[PORT:8443]/</WebUI>
+</Container>
