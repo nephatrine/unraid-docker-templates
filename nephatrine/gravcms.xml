@@ -1,91 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container>
-	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/gravcms.xml</TemplateURL>
-
+<Container version="2">
 	<Name>gravcms</Name>
-	<Project>https://getgrav.org/</Project>
-	<Overview>Grav is a modern open source flat-file CMS.</Overview>
-	<Description>Grav is a modern open source flat-file CMS.[br]
-  [br][b]Variables[/b][br]
-  [b]ADMINIP:[/b] Administrative IP[br]
-  [b]DNSADDR:[/b] DNS Resolver IPs[br]
-  [b]PGID:[/b] NGINX GID[br]
-  [b]PUID:[/b] NGINX UID[br]
-  [b]SSLEMAIL:[/b] LetsEncrypt Email Address[br]
-  [b]SSLDOMAINS:[/b] LetsEncrypt (Sub)domains[br]
-  [b]TZ:[/b] Time Zone[br]
-  [br][b]Network Ports[/b][br]
-  [b]TCP 80:[/b] HTTP Port[br]
-  [b]TCP 443:[/b] HTTPS Port[br]
-  [br][b]Volume Mounts[/b][br]
-  [b]/mnt/config:[/b] Config/Data/Log Volume[br]
-	</Description>
-
-	<BaseImage>nephatrine/nginx-lemp</BaseImage>
-	<Beta>False</Beta>
-	<Category>Network:Web</Category>
-	<Registry>https://hub.docker.com/r/nephatrine/gravcms/</Registry>
 	<Repository>nephatrine/gravcms</Repository>
-	<Support>https://github.com/nephatrine/docker-gravcms/issues</Support>
+	<Registry>https://hub.docker.com/r/nephatrine/gravcms/</Registry>
 
-	<BindTime>true</BindTime>
+	<Network>bridge</Network>
 	<Privileged>false</Privileged>
 
-	<Environment>
-		<Variable>
-			<Name>ADMINIP</Name>
-			<Value>127.0.0.1</Value>
-		</Variable>
-		<Variable>
-			<Name>DNSADDR</Name>
-			<Value>8.8.8.8 8.8.4.4</Value>
-		</Variable>
-		<Variable>
-			<Name>PUID</Name>
-			<Value>1000</Value>
-		</Variable>
-		<Variable>
-			<Name>PGID</Name>
-			<Value>100</Value>
-		</Variable>
-		<Variable>
-			<Name>SSLEMAIL</Name>
-			<Value></Value>
-		</Variable>
-		<Variable>
-			<Name>SSLDOMAINS</Name>
-			<Value></Value>
-		</Variable>
-		<Variable>
-			<Name>TZ</Name>
-			<Value>America/New_York</Value>
-		</Variable>
-	</Environment>
-
-	<Networking>
-		<Mode>bridge</Mode>
-		<Publish>
-			<Port>
-				<HostPort>9011</HostPort>
-				<ContainerPort>80</ContainerPort>
-				<Protocol>tcp</Protocol>
-			</Port>
-			<Port>
-				<HostPort>9021</HostPort>
-				<ContainerPort>443</ContainerPort>
-				<Protocol>tcp</Protocol>
-			</Port>
-		</Publish>
-	</Networking>
-
-	<Data>
-		<Volume>
-			<HostDir>/mnt/user/appdata/docker-gravcms</HostDir>
-			<ContainerDir>/mnt/config</ContainerDir>
-			<Mode>rw</Mode>
-		</Volume>
-	</Data>
-	
-	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/gravcms.png</Icon>
+	<Support>https://github.com/nephatrine/docker-gravcms/issues</Support>
+	<Project>https://getgrav.org/</Project>
+	<Overview>Grav is a modern open source flat-file CMS.</Overview>
+	<Category>Network:Web</Category>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
+	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/gravcms.xml</TemplateURL>
+	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/gravcms.png</Icon>
+
+	<Config Name="Admin IP" Target="ADMINIP" Default="127.0.0.1" Description="Container Variable: ADMINIP" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="DNS Resolver(s)" Target="DNSADDR" Default="8.8.8.8 8.8.4.4" Description="Container Variable: DNSADDR" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Timezone" Target="TZ" Default="America/New_York" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Owner UID" Target="PUID" Default="1000" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Owner GID" Target="PGID" Default="100" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Domain(s)" Target="SSLDOMAINS" Description="Container Variable: SSLDOMAINS" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Email" Target="SSLEMAIL" Description="Container Variable: SSLEMAIL" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+
+	<Config Name="HTTP Port" Target="80" Default="9011" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
+	<Config Name="HTTPS Port" Target="443" Mode="tcp" Description="Container Port: 443/tcp" Type="Port" Display="advanced" Required="false"></Config>
+
+	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-gravcms" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
 </Container>

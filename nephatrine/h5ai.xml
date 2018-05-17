@@ -1,97 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container>
-	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/h5ai.xml</TemplateURL>
-
+<Container version="2">
 	<Name>h5ai</Name>
-	<Project>https://larsjung.de/h5ai/</Project>
-	<Overview>h5ai is a modern file indexer for HTTP web servers with focus on your files. </Overview>
-	<Description>h5ai is a modern file indexer for HTTP web servers with focus on your files. [br]
-  [br][b]Variables[/b][br]
-  [b]ADMINIP:[/b] Administrative IP[br]
-  [b]DNSADDR:[/b] DNS Resolver IPs[br]
-  [b]PGID:[/b] NGINX GID[br]
-  [b]PUID:[/b] NGINX UID[br]
-  [b]SSLEMAIL:[/b] LetsEncrypt Email Address[br]
-  [b]SSLDOMAINS:[/b] LetsEncrypt (Sub)domains[br]
-  [b]TZ:[/b] Time Zone[br]
-  [br][b]Network Ports[/b][br]
-  [b]TCP 80:[/b] HTTP Port[br]
-  [b]TCP 443:[/b] HTTPS Port[br]
-  [br][b]Volume Mounts[/b][br]
-  [b]/mnt/config:[/b] Config/Log Volume[br]
-  [b]/mnt/media:[/b] Data Volume[br]
-	</Description>
-
-	<BaseImage>nephatrine/base-php7</BaseImage>
-	<Beta>False</Beta>
-	<Category>MediaServer:Other Network:Web</Category>
-	<Registry>https://hub.docker.com/r/nephatrine/h5ai/</Registry>
 	<Repository>nephatrine/h5ai</Repository>
-	<Support>https://github.com/nephatrine/docker-h5ai/issues</Support>
+	<Registry>https://hub.docker.com/r/nephatrine/h5ai/</Registry>
 
-	<BindTime>true</BindTime>
+	<Network>bridge</Network>
 	<Privileged>false</Privileged>
 
-	<Environment>
-		<Variable>
-			<Name>ADMINIP</Name>
-			<Value>127.0.0.1</Value>
-		</Variable>
-		<Variable>
-			<Name>DNSADDR</Name>
-			<Value>8.8.8.8 8.8.4.4</Value>
-		</Variable>
-		<Variable>
-			<Name>PUID</Name>
-			<Value>1000</Value>
-		</Variable>
-		<Variable>
-			<Name>PGID</Name>
-			<Value>100</Value>
-		</Variable>
-		<Variable>
-			<Name>SSLEMAIL</Name>
-			<Value></Value>
-		</Variable>
-		<Variable>
-			<Name>SSLDOMAINS</Name>
-			<Value></Value>
-		</Variable>
-		<Variable>
-			<Name>TZ</Name>
-			<Value>America/New_York</Value>
-		</Variable>
-	</Environment>
-
-	<Networking>
-		<Mode>bridge</Mode>
-		<Publish>
-			<Port>
-				<HostPort>9013</HostPort>
-				<ContainerPort>80</ContainerPort>
-				<Protocol>tcp</Protocol>
-			</Port>
-			<Port>
-				<HostPort>9023</HostPort>
-				<ContainerPort>443</ContainerPort>
-				<Protocol>tcp</Protocol>
-			</Port>
-		</Publish>
-	</Networking>
-
-	<Data>
-		<Volume>
-			<HostDir>/mnt/user/appdata/docker-h5ai</HostDir>
-			<ContainerDir>/mnt/config</ContainerDir>
-			<Mode>rw</Mode>
-		</Volume>
-		<Volume>
-			<HostDir>/mnt/user/appdata/file-share</HostDir>
-			<ContainerDir>/mnt/media</ContainerDir>
-			<Mode>rw</Mode>
-		</Volume>
-	</Data>
-	
-	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/h5ai.png</Icon>
+	<Support>https://github.com/nephatrine/docker-h5ai/issues</Support>
+	<Project>https://larsjung.de/h5ai/</Project>
+	<Overview>h5ai is a modern file indexer for HTTP web servers with focus on your files. </Overview>
+	<Category>MediaServer:Other Network:Web</Category>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
+	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/h5ai.xml</TemplateURL>
+	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/h5ai.png</Icon>
+
+	<Config Name="DNS Resolver(s)" Target="DNSADDR" Default="8.8.8.8 8.8.4.4" Description="Container Variable: DNSADDR" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Timezone" Target="TZ" Default="America/New_York" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Admin IP" Target="ADMINIP" Default="127.0.0.1" Description="Container Variable: ADMINIP" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Owner UID" Target="PUID" Default="1000" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Owner GID" Target="PGID" Default="100" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Domain(s)" Target="SSLDOMAINS" Description="Container Variable: SSLDOMAINS" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Email" Target="SSLEMAIL" Description="Container Variable: SSLEMAIL" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+
+	<Config Name="HTTP Port" Target="80" Default="9013" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
+	<Config Name="HTTPS Port" Target="443" Mode="tcp" Description="Container Port: 443/tcp" Type="Port" Display="advanced" Required="false"></Config>
+
+	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-h5ai-config" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
+	<Config Name="Media/Data Mount" Target="/mnt/media" Default="/mnt/user/appdata/docker-h5ai-data" Mode="rw" Description="Container Path: /mnt/media" Type="Path" Display="always" Required="true"></Config>
 </Container>

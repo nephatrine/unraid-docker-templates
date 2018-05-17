@@ -10,7 +10,7 @@
 	<Support>https://github.com/nephatrine/docker-unifi/issues</Support>
 	<Project>https://unifi-sdn.ubnt.com/</Project>
 	<Overview>UniFi is quickly expanding to a full Software Defined Networking (SDN) solution.</Overview>
-	<Category>Network:Management Status:Stable</Category>
+	<Category>Network:Management</Category>
 	<WebUI>https://[IP]:[PORT:8443]/</WebUI>
 	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/unifi.xml</TemplateURL>
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/unifi.png</Icon>

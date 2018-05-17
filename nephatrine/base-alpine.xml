@@ -1,56 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<Container>
-	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/base-alpine.xml</TemplateURL>
-
+<Container version="2">
 	<Name>base-alpine</Name>
-	<Project>https://alpinelinux.org/</Project>
-	<Overview>Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.</Overview>
-	<Description>Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.[br]
-[center][font size=5]DOES NOT DO ANYTHING[/font][/center]
-  [br][b]Variables[/b][br]
-  [b]PGID:[/b] Volume Owner GID[br]
-  [b]PUID:[/b] Volume Owner UID[br]
-  [b]TZ:[/b] Time Zone[br]
-  [br][b]Volume Mounts[/b][br]
-  [b]/mnt/config:[/b] Home Volume[br]
-	</Description>
-
-	<BaseImage>alpine</BaseImage>
-	<Beta>False</Beta>
-	<Category>Tools:</Category>
-	<Registry>https://hub.docker.com/r/nephatrine/base-alpine/</Registry>
 	<Repository>nephatrine/base-alpine</Repository>
-	<Support>https://github.com/nephatrine/docker-base-alpine/issues</Support>
+	<Registry>https://hub.docker.com/r/nephatrine/base-alpine/</Registry>
 
-	<BindTime>true</BindTime>
+	<Network>bridge</Network>
 	<Privileged>false</Privileged>
 
-	<Environment>
-		<Variable>
-			<Name>PUID</Name>
-			<Value>1000</Value>
-		</Variable>
-		<Variable>
-			<Name>PGID</Name>
-			<Value>100</Value>
-		</Variable>
-		<Variable>
-			<Name>TZ</Name>
-			<Value>America/New_York</Value>
-		</Variable>
-	</Environment>
-
-	<Networking>
-		<Mode>bridge</Mode>
-	</Networking>
-
-	<Data>
-		<Volume>
-			<HostDir>/mnt/user/appdata/docker-base-alpine</HostDir>
-			<ContainerDir>/mnt/config</ContainerDir>
-			<Mode>rw</Mode>
-		</Volume>
-	</Data>
-	
+	<Support>https://github.com/nephatrine/docker-base-alpine/issues</Support>
+	<Project>https://alpinelinux.org/</Project>
+	<Overview>Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.</Overview>
+	<Category>Tools:</Category>
+	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/base-alpine.xml</TemplateURL>
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/base-alpine.png</Icon>
+	
+	<Config Name="Timezone" Target="TZ" Default="America/New_York" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Owner UID" Target="PUID" Default="1000" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Owner GID" Target="PGID" Default="100" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	
+	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-alpine" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
 </Container>
