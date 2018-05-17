@@ -20,11 +20,11 @@
 	<Config Name="Timezone" Target="TZ" Default="America/New_York" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
 	<Config Name="Owner UID" Target="PUID" Default="1000" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
 	<Config Name="Owner GID" Target="PGID" Default="100" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
-	<Config Name="SSL Domain(s)" Target="SSLDOMAINS" Description="Container Variable: SSLDOMAINS" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
-	<Config Name="SSL Email" Target="SSLEMAIL" Description="Container Variable: SSLEMAIL" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Domain(s)" Target="SSLDOMAINS" Default="" Description="Container Variable: SSLDOMAINS" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Email" Target="SSLEMAIL" Default="" Description="Container Variable: SSLEMAIL" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
 
-	<Config Name="HTTP Port" Target="80" Default="9011" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
-	<Config Name="HTTPS Port" Target="443" Mode="tcp" Description="Container Port: 443/tcp" Type="Port" Display="advanced" Required="false"></Config>
+	<Config Name="HTTP Port" Target="80" Default="9012" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
+	<Config Name="HTTPS Port" Target="443" Default="" Mode="tcp" Description="Container Port: 443/tcp" Type="Port" Display="advanced" Required="false"></Config>
 
 	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-dokuwiki" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
 </Container>

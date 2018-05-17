@@ -16,8 +16,8 @@
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/nginx-ssl.png</Icon>
 
 	<Config Name="DNS Resolver(s)" Target="DNSADDR" Default="8.8.8.8 8.8.4.4" Description="Container Variable: DNSADDR" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-	<Config Name="SSL Domain(s)" Target="SSLDOMAINS" Description="Container Variable: SSLDOMAINS" Type="Variable" Display="always" Required="false" Mask="false"></Config>
-	<Config Name="SSL Email" Target="SSLEMAIL" Description="Container Variable: SSLEMAIL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="SSL Domain(s)" Target="SSLDOMAINS" Default="" Description="Container Variable: SSLDOMAINS" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="SSL Email" Target="SSLEMAIL" Default="" Description="Container Variable: SSLEMAIL" Type="Variable" Display="always" Required="false" Mask="false"></Config>
 	<Config Name="Timezone" Target="TZ" Default="America/New_York" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
 	<Config Name="Admin IP" Target="ADMINIP" Default="127.0.0.1" Description="Container Variable: ADMINIP" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
 	<Config Name="Owner UID" Target="PUID" Default="1000" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
