@@ -29,7 +29,7 @@
 	<Config Name="SSL Email" Target="SSLEMAIL" Default="" Description="Container Variable: SSLEMAIL" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
 
 	<Config Name="Minecraft Port" Target="25565" Default="25565" Mode="tcp" Description="Container Port: 25565/tcp" Type="Port" Display="always" Required="true"></Config>
-	<Config Name="HTTP Port" Target="80" Default="9011" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
+	<Config Name="HTTP Port" Target="80" Default="9018" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
 	<Config Name="HTTPS Port" Target="443" Default="" Mode="tcp" Description="Container Port: 443/tcp" Type="Port" Display="advanced" Required="false"></Config>
 
 	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-minecraft-config" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
