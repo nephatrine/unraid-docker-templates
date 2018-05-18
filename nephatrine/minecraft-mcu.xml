@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+	<Name>minecraft-mcu</Name>
+	<Repository>nephatrine/minecraft-mcu</Repository>
+	<Registry>https://hub.docker.com/r/nephatrine/minecraft-mcu/</Registry>
+
+	<Network>bridge</Network>
+	<Privileged>false</Privileged>
+
+	<Support>https://github.com/nephatrine/docker-minecraft-mcu/issues</Support>
+	<Project>https://files.minecraftforge.net/</Project>
+	<Overview>Minecraft is a game about placing blocks and going on adventures.</Overview>
+	<Category>MediaServer:Other</Category>
+	<WebUI>http://[IP]:[PORT:80]/</WebUI>
+	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/minecraft-mcu.xml</TemplateURL>
+	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/minecraft-mcu.png</Icon>
+
+	<Config Name="Admin IP" Target="ADMINIP" Default="127.0.0.1" Description="Container Variable: ADMINIP" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="DNS Resolver(s)" Target="DNSADDR" Default="8.8.8.8 8.8.4.4" Description="Container Variable: DNSADDR" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Minecraft Modpack" Target="USE_MODPACK" Default="" Description="Container Variable: USE_MODPACK" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Minecraft Server" Target="MC_SERVER" Default="example.net:25565" Description="Container Variable: MC_SERVER" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+	<Config Name="Minecraft Version" Target="VERSION" Default="recommended" Description="Container Variable: VERSION" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+	<Config Name="Timezone" Target="TZ" Default="America/New_York" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Modpack Download URL" Target="MODPACK_URL_DL" Default="" Description="Container Variable: MODPACK_URL_DL" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Modpack News URL" Target="MODPACK_URL_NEWS" Default="" Description="Container Variable: MODPACK_URL_NEWS" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Owner UID" Target="PUID" Default="1000" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Owner GID" Target="PGID" Default="100" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Domain(s)" Target="SSLDOMAINS" Default="" Description="Container Variable: SSLDOMAINS" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="SSL Email" Target="SSLEMAIL" Default="" Description="Container Variable: SSLEMAIL" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+
+	<Config Name="Minecraft Port" Target="25565" Default="25565" Mode="tcp" Description="Container Port: 25565/tcp" Type="Port" Display="always" Required="true"></Config>
+	<Config Name="HTTP Port" Target="80" Default="9011" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
+	<Config Name="HTTPS Port" Target="443" Default="" Mode="tcp" Description="Container Port: 443/tcp" Type="Port" Display="advanced" Required="false"></Config>
+
+	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-minecraft-config" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
+	<Config Name="Data/Game Mount" Target="/mnt/data" Default="/mnt/user/appdata/docker-minecraft-data" Mode="rw" Description="Container Path: /mnt/data" Type="Path" Display="always" Required="true"></Config>
+</Container>
