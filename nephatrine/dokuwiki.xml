@@ -10,7 +10,7 @@
 	<Support>https://github.com/nephatrine/docker-dokuwiki/issues</Support>
 	<Project>https://www.dokuwiki.org/dokuwiki</Project>
 	<Overview>DokuWiki is a simple to use and highly versatile Open Source wiki software that doesn't require a database.</Overview>
-	<Category>Network:Web</Category>
+	<Category>Productivity: Network:Web</Category>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
 	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/dokuwiki.xml</TemplateURL>
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/dokuwiki.png</Icon>

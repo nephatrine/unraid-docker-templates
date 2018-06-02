@@ -10,7 +10,7 @@
 	<Support>https://github.com/nephatrine/docker-base-alpine/issues</Support>
 	<Project>https://alpinelinux.org/</Project>
 	<Overview>Alpine Linux is a security-oriented, lightweight Linux distribution based on musl libc and busybox.</Overview>
-	<Category>Tools:</Category>
+	<Category>Tools:System</Category>
 	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/base-alpine.xml</TemplateURL>
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/base-alpine.png</Icon>
 	
