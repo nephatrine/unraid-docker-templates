@@ -10,7 +10,7 @@
 	<Support>https://github.com/nephatrine/docker-h5ai/issues</Support>
 	<Project>https://larsjung.de/h5ai/</Project>
 	<Overview>h5ai is a modern file indexer for HTTP web servers with focus on your files. </Overview>
-	<Category>MediaServer:Other Network:Web</Category>
+	<Category>Cloud: Network:Web</Category>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
 	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/h5ai.xml</TemplateURL>
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/h5ai.png</Icon>
@@ -26,6 +26,6 @@
 	<Config Name="HTTP Port" Target="80" Default="9013" Mode="tcp" Description="Container Port: 80/tcp" Type="Port" Display="always" Required="true"></Config>
 	<Config Name="HTTPS Port" Target="443" Default="" Mode="tcp" Description="Container Port: 443/tcp" Type="Port" Display="advanced" Required="false"></Config>
 
-	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-h5ai-config" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
-	<Config Name="Media/Data Mount" Target="/mnt/media" Default="/mnt/user/appdata/docker-h5ai-data" Mode="rw" Description="Container Path: /mnt/media" Type="Path" Display="always" Required="true"></Config>
+	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-h5ai" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
+	<Config Name="Media/Data Mount" Target="/mnt/media" Default="/mnt/user/appdata/data-share" Mode="rw" Description="Container Path: /mnt/media" Type="Path" Display="always" Required="true"></Config>
 </Container>
