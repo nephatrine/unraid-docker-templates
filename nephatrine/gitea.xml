@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+	<Name>gitea</Name>
+	<Repository>nephatrine/gitea</Repository>
+	<Registry>https://hub.docker.com/r/nephatrine/gitea/</Registry>
+
+	<Network>bridge</Network>
+	<Privileged>false</Privileged>
+
+	<Support>https://github.com/nephatrine/docker-gitea/issues</Support>
+	<Project>https://gitea.io/en-us/</Project>
+	<Overview>Gitea is a lightweight code hosting solution written in Go and published under the MIT license.</Overview>
+	<Category>Cloud: Productivity: Network:Web</Category>
+	<WebUI>https://[IP]:[PORT:3000]/</WebUI>
+	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/gitea.xml</TemplateURL>
+	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/gitea.png</Icon>
+
+	<Config Name="Timezone" Target="TZ" Default="America/New_York" Description="Container Variable: TZ" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+	<Config Name="Owner UID" Target="PUID" Default="1000" Description="Container Variable: PUID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+	<Config Name="Owner GID" Target="PGID" Default="100" Description="Container Variable: PGID" Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+
+	<Config Name="HTTP Port" Target="3000" Default="3000" Mode="tcp" Description="Container Port: 3000/tcp" Type="Port" Display="always" Required="true"></Config>
+	<Config Name="SSH Port" Target="22" Default="2020" Mode="tcp" Description="Container Port: 22/tcp" Type="Port" Display="always" Required="false"></Config>
+
+	<Config Name="Operational Mount" Target="/mnt/config" Default="/mnt/user/appdata/docker-gitea" Mode="rw" Description="Container Path: /mnt/config" Type="Path" Display="always" Required="true"></Config>
+	<Config Name="Git/Data Mount" Target="/mnt/data" Default="/mnt/user/appdata/data-git" Mode="rw" Description="Container Path: /mnt/data" Type="Path" Display="always" Required="true"></Config>
+</Container>
