@@ -11,7 +11,7 @@
 	<Project>https://gitea.io/en-us/</Project>
 	<Overview>Gitea is a lightweight code hosting solution written in Go and published under the MIT license.</Overview>
 	<Category>Cloud: Productivity: Network:Web</Category>
-	<WebUI>https://[IP]:[PORT:3000]/</WebUI>
+	<WebUI>http://[IP]:[PORT:3000]/</WebUI>
 	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/gitea.xml</TemplateURL>
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/gitea.png</Icon>
 
