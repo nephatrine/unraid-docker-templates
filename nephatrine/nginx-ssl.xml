@@ -12,7 +12,7 @@
 	<Overview>nginx (engine x) is an HTTP and reverse proxy server, a mail proxy server, and a generic TCP/UDP proxy server.</Overview>
 	<Category>Network:Proxy Network:Web</Category>
 	<WebUI>http://[IP]:[PORT:80]/</WebUI>
-	<TemplateURL>https://raw.githubusercontent.com/nephatrine/unraid-docker-templates/master/nephatrine/nginx-ssl.xml</TemplateURL>
+	<TemplateURL>https://code.nephatrine.net/nephatrine/unraid-containers/raw/branch/master/nephatrine/nginx-ssl.xml</TemplateURL>
 	<Icon>https://github.com/nephatrine/unraid-docker-templates/raw/master/nephatrine/icons/nginx-ssl.png</Icon>
 
 	<Config Name="DNS Resolver(s)" Target="DNSADDR" Default="8.8.8.8 8.8.4.4" Description="Container Variable: DNSADDR" Type="Variable" Display="always" Required="false" Mask="false"></Config>
